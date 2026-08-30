@@ -1,4 +1,7 @@
 PACKAGES = (
 	"niri"
 	"wlsunset"
+	"nvim"
+	"kitty"
+	"thunar"
 )
