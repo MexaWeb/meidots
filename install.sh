@@ -28,6 +28,7 @@ done < <(
     jq -r 'to_entries[] | [.key, .value] | @tsv' directories.json
 )
 
-pacman -Syu --needed --noconfirm --disable-download-timeout - < packages
+sudo -v
+sudo pacman -Syu --needed --noconfirm --disable-download-timeout - < packages
 
 echo "done."
