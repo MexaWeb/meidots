@@ -1,5 +1,17 @@
 #!/usr/bin/env bash
 # meow
+
+
+
+
+echo "hello welcome to meidots!!1!"
+read -s -p "press enter to install meidots..."
+
+echo
+
+sudo -v
+
+
 set -euo pipefail
 
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
@@ -28,7 +40,6 @@ done < <(
     jq -r 'to_entries[] | [.key, .value] | @tsv' directories.json
 )
 
-sudo -v
 sudo pacman -Syu --needed --noconfirm --disable-download-timeout - < packages
 
 echo "done."
