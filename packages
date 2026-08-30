@@ -1,7 +1,11 @@
-PACKAGES = (
-	"niri"
-	"wlsunset"
-	"nvim"
-	"kitty"
-	"thunar"
-)
+niri
+wlsunset
+nvim
+kitty
+thunar
+awww
+quickshell
+swaylock
+fuzzel
+cliphist
+wl-clipboard
