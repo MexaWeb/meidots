@@ -1,0 +1,4 @@
+{
+    "config.kdl": "~/.config/niri/config.kdl",
+    "shell.qml": "~/.config/quickshell/shell.qml"
+}
