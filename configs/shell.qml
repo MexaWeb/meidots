@@ -5,10 +5,11 @@ import Quickshell.Widgets
 
 ShellRoot {
     readonly property string statusBarFont: "adwaita mono"
+    property bool fullscreen: ToplevelManager.activeToplevel? ToplevelManager.activeToplevel.fullscreen : null
 
     PanelWindow {
         id: statusbar
-        height: 50
+        implicitHeight: 50
         color: "transparent"
         margins.left: 10
 
@@ -18,7 +19,7 @@ ShellRoot {
         }
 
         BackgroundEffect.blurRegion: Region {
-            item: ToplevelManager.activeToplevel.fullscreen? null : statusbar.contentItem
+            item: fullscreen? null : statusbar.contentItem
         }
 
         anchors {
@@ -30,7 +31,7 @@ ShellRoot {
         exclusiveZone: 50
 
         Rectangle {
-            opacity: if (ToplevelManager.activeToplevel.fullscreen) {0} else {1}
+            opacity: fullscreen? 0 : 1
 
             Behavior on opacity {
                 NumberAnimation {
