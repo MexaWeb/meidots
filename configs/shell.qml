@@ -35,8 +35,8 @@ ShellRoot {
 
             Behavior on opacity {
                 NumberAnimation {
-                    duration: 300 // Animation time in milliseconds
-                    easing.type: Easing.InOutQuad // Smooth curve
+                    duration: 300
+                    easing.type: Easing.InOutQuad
                 }
             }
 
