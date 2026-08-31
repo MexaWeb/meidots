@@ -1,0 +1,12 @@
+{
+  "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },
+  "lualine.nvim": { "branch": "master", "commit": "221ce6b2d999187044529f49da6554a92f740a96" },
+  "neo-tree.nvim": { "branch": "main", "commit": "3352e998cb8343a4b8d82eca50c74aa17bc61f5e" },
+  "nui.nvim": { "branch": "main", "commit": "10fc361835c856ba4233ef5ea135b919bf3dce97" },
+  "nvim-autopairs": { "branch": "master", "commit": "430522f95fe4fb7c511ec64f8c1a90cc6a66c05c" },
+  "nvim-treesitter": { "branch": "main", "commit": "19071296d3d643b48615ee574a20e8a03ac40872" },
+  "nvim-web-devicons": { "branch": "master", "commit": "5f032a85be210cd1c6ac98861eb3b187ff3bd5eb" },
+  "plenary.nvim": { "branch": "master", "commit": "74b06c6c75e4eeb3108ec01852001636d85a932b" },
+  "vim-monokai-tasty": { "branch": "master", "commit": "0b82de318a2dd905f8eb1b12fcef785eb0953ef3" },
+  "which-key.nvim": { "branch": "main", "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a" }
+}
