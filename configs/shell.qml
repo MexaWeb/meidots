@@ -5,6 +5,7 @@ import Quickshell.Widgets
 
 ShellRoot {
     readonly property string statusBarFont: "adwaita mono"
+
     PanelWindow {
         id: statusbar
         height: 50
@@ -17,8 +18,9 @@ ShellRoot {
         }
 
         BackgroundEffect.blurRegion: Region {
-            item: statusbar.contentItem
+            item: ToplevelManager.activeToplevel.fullscreen? null : statusbar.contentItem
         }
+
         anchors {
             top: true
             left: true
@@ -28,6 +30,15 @@ ShellRoot {
         exclusiveZone: 50
 
         Rectangle {
+            opacity: if (ToplevelManager.activeToplevel.fullscreen) {0} else {1}
+
+            Behavior on opacity {
+                NumberAnimation {
+                    duration: 300 // Animation time in milliseconds
+                    easing.type: Easing.InOutQuad // Smooth curve
+                }
+            }
+
             bottomLeftRadius: 15
             bottomRightRadius: 15
             width: parent.width - 15
@@ -45,7 +56,7 @@ ShellRoot {
                 implicitHeight: 24
                 
                 visible: ToplevelManager.activeToplevel && ToplevelManager.activeToplevel.appId ? true : false
-                
+
                 source: visible ? Quickshell.iconPath(ToplevelManager.activeToplevel.appId, true) : ""
             }
             Text {
