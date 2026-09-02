@@ -1,4 +1,5 @@
 {
-    "config.kdl": "~/.config/niri/config.kdl",
-    "shell.qml": "~/.config/quickshell/shell.qml"
+    "niri-ui-components/niri": "~/.config/niri",
+    "niri-ui-components/quickshell": "~/.config/quickshell",
+    "apps/nvim": "~/.config/nvim"
 }
