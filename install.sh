@@ -1,18 +1,48 @@
 #!/usr/bin/env bash
 # meow
+set -euo pipefail
 
 
 
 
 echo "hello welcome to meidots!!1!"
-read -s -p "press enter to install meidots..."
 
+read -r -p "this will replace existing configs. backup them? [y/N] " answer
+answer="${answer,,}"
+
+case "$answer" in
+    y|yes)
+        answer="y"
+        ;;
+    n|no)
+        answer="n"
+        ;;
+esac
+
+
+if [[ "$answer" == "y" ]]; then
+    echo "backing up existing configs to ~/meidots/backup"
+    mkdir -p "./backup"
+    while IFS=$'\t' read -r source destination; do
+        destination="${destination/#\~/$HOME}"
+        if [[ -e "$destination" ]]; then
+            echo "backing up $destination"
+            cp -r "$destination" "./backup/"
+        fi
+    done < <(
+        jq -r 'to_entries[] | [.key, .value] | @tsv' directories.json
+    )
+fi
+
+
+
+echo
+read -s -p "press enter to install meidots..."
 echo
 
 sudo -v
 
 
-set -euo pipefail
 
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
