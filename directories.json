@@ -1,5 +1,6 @@
 {
     "niri-ui-components/niri": "~/.config/niri",
     "niri-ui-components/quickshell": "~/.config/quickshell",
-    "apps/nvim": "~/.config/nvim"
+    "apps/nvim": "~/.config/nvim",
+    "apps/kitty": "~/.config/kitty"
 }
